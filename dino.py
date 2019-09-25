@@ -24,4 +24,18 @@ class Dino:
         return ''.join(self._driver.execute_script("return Runner.instance_.distanceMeter.digits"))
 
     def is_game_over(self):
-        return self._driver.execute_script("return Runner.crashed") == 'true'
+        return self._driver.execute_script("return Runner.instance_.crashed") == 'true'
+
+    def get_obstacles(self):
+        obst_obj = self._driver.execute_script("return Runner.instance_.horizon.obstacles")
+        obstacles = []
+
+        for i in obst_obj:
+            obstacles.append({
+                'x': i['xPos'],
+                'y': i['yPos'],
+                'size': i['size'],
+                'type': i['typeConfig']['type'],
+            })
+
+        return obstacles
