@@ -8,6 +8,9 @@ I'm quite proud of the result considering that, with some deeper knowledge, the 
 In this project is used a Deep Q-learning Network.
 
 With just an hour of training, the model is able to reach a score of 600 with 500 tries.
+With a total of 700 tries, it reaches 3894 as the higher score.
+
+Analyzing the results of this experiment I think that using an approach with generations and genetic algorithms the result could be better.
 
 
 ## How to use the project
