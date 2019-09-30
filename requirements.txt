@@ -1,0 +1,4 @@
+tensorflow
+numpy
+selenium
+keras-rl
