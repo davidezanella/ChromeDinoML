@@ -1,5 +1,7 @@
 # Chrome Dino ML
 
+<img src="https://media.giphy.com/media/3h3GgndiQfww20KTSi/giphy.gif">
+
 This is a simple experiment that aims to create a Deep Learning model capable to play the chrome Dino game.
 
 To program this project I took inspiration from other online repos and articles.
