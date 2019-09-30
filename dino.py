@@ -6,7 +6,8 @@ import time
 class Dino:
     FIGURES = {
         'CACTUS_SMALL': 0,
-        'CACTUS_LARGE': 1
+        'CACTUS_LARGE': 1,
+        'PTERODACTYL': 2
     }
 
     def __init__(self):
