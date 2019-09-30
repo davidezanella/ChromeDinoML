@@ -2,7 +2,7 @@ import numpy as np
 from collections import deque
 import random
 
-from keras.models import Sequential
+from keras.models import Sequential, model_from_json
 from keras.layers import Dense
 from keras.optimizers import Adam
 
@@ -49,3 +49,19 @@ class DQNAgent:
             self.model.fit(state, target_f, epochs=1, verbose=0)
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
+
+    def save(self):
+        # serialize model to JSON
+        model_json = self.model.to_json()
+        with open("model.json", "w") as json_file:
+            json_file.write(model_json)
+        # serialize weights
+        self.model.save_weights("model.h5")
+
+    def load(self):
+        json_file = open('model.json', 'r')
+        loaded_model_json = json_file.read()
+        json_file.close()
+        self.model = model_from_json(loaded_model_json)
+        # load weights
+        self.model.load_weights("model.h5")

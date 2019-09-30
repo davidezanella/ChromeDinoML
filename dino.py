@@ -20,6 +20,8 @@ class Dino:
         time.sleep(0.5) # wait the page loading
         self.jump() # in order to start the game
 
+        time.sleep(4) # skip initial part of the game
+
     def jump(self):
         self._driver.find_element_by_tag_name("body").send_keys(Keys.ARROW_UP)
 
@@ -49,3 +51,6 @@ class Dino:
         ]
 
         return obstacle
+
+    def close(self):
+        self._driver.close()
